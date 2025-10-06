@@ -49,4 +49,4 @@ export default {
     updatePet,
     deletePet,
     createPetWithImage
-}
+} 

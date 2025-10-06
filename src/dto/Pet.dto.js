@@ -8,4 +8,4 @@ export default class PetDTO {
             adopted:false
         }
     }
-}
+} 

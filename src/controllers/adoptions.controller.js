@@ -30,4 +30,4 @@ export default {
     createAdoption,
     getAllAdoptions,
     getAdoption
-}
+} 

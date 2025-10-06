@@ -2,9 +2,9 @@ import adoptionModel from "./models/Adoption.js";
 
 export default class Adoption {
 
-    get = (params) =>{
+    get = (params) =>{ 
         return adoptionModel.find(params);
-    }
+    } 
 
     getBy = (params) =>{
         return adoptionModel.findOne(params);

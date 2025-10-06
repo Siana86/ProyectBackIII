@@ -4,7 +4,7 @@ import { generateMockUsers } from '../mocks/usersMock.js';
 import { generateMockPets } from '../mocks/petsMock.js';
 import { AppError } from '../middlewares/errorHandler.js';
 
-const router = Router();
+const router = Router(); 
 
 router.get('/mocking/users', (req, res, next) => {
     try {

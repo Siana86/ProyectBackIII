@@ -32,4 +32,4 @@ export default {
     getAllUsers,
     getUser,
     updateUser
-}
+} 

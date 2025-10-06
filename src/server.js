@@ -1,7 +1,7 @@
 import app from './app.js';
 import connectMongoDB from './config/db.js';
 
-connectMongoDB();
+connectMongoDB(); 
 
 const PORT = process.env.PORT || 8080;
 const server = app.listen(PORT, () => console.log(`🚀 Servidor en http://localhost:${PORT}`));

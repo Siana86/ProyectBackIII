@@ -2,7 +2,7 @@
 export default class GenericRepository {
     constructor(dao) {
         this.dao = dao;
-    }
+    } 
 
     getAll = (params) =>{
         return this.dao.get(params);

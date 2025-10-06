@@ -6,4 +6,4 @@ export default class UserDTO {
             email:user.email
         }
     }
-}
+} 

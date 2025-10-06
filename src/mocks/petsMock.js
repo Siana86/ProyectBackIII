@@ -14,4 +14,4 @@ export const generateMockPets = (quantity = 10) => {
         });
     }
     return pets;
-};
+}; 
