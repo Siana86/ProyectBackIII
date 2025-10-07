@@ -1,7 +1,6 @@
 
 import { Router } from 'express';
-import { generateMockUsers } from '../mocks/usersMock.js';
-import { generateMockPets } from '../mocks/petsMock.js';
+import { generateMockUsers, generateMockPets } from '../utils/mocking.js'
 import { AppError } from '../middlewares/errorHandler.js';
 
 const router = Router(); 
@@ -11,8 +10,7 @@ router.get('/mocks/users', (req, res, next) => {
         const { qty } = req.query;
         const qtyNumber = Number(qty);
 
-        if (isNaN(qtyNumber) || qtyNumber <= 0) {
-            // lanzamos error controlado
+        if (isNaN(qtyNumber) || qtyNumber <= 0) {            
             return next(new AppError('La cantidad debe ser un número entero positivo', 400));
         }
 
