@@ -5,7 +5,7 @@ import usersRouter from './routes/users.router.js';
 import petsRouter from './routes/pets.router.js';
 import adoptionsRouter from './routes/adoption.router.js';
 import sessionsRouter from './routes/sessions.router.js';
-import mockingRouter from './routes/mocking.router.js';
+import mockingRouter from './routes/mocks.router.js';
 import dotenv from "dotenv";
 import connectMongoDB from './config/db.js';
 import { AppError, errorHandler } from './middlewares/errorHandler.js';

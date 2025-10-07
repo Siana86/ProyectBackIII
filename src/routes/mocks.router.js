@@ -6,7 +6,7 @@ import { AppError } from '../middlewares/errorHandler.js';
 
 const router = Router(); 
 
-router.get('/mocking/users', (req, res, next) => {
+router.get('/mocks/users', (req, res, next) => {
     try {
         const { qty } = req.query;
         const qtyNumber = Number(qty);
@@ -23,7 +23,7 @@ router.get('/mocking/users', (req, res, next) => {
     }
 });
 
-router.get('/mocking/pets', (req, res, next) => {
+router.get('/mocks/pets', (req, res, next) => {
     try {
         const { qty } = req.query;
         const qtyNumber = Number(qty);
