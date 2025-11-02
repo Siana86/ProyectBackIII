@@ -28,5 +28,5 @@ process.on('SIGTERM', () => {
 });
 
 process.on('exit', (code) => {
-    console.log(`👋 El proceso está saliendo con código ${code}`);
+    console.log(`El proceso está saliendo con código ${code}`);
 });

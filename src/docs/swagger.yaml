@@ -1,0 +1,256 @@
+openapi: 3.0.0
+info:
+  title: "ProyectBackIII - Users & Mocks API"
+  version: "1.0.0"
+  description: "Documentación de la API de Usuarios y Mocks - Proyecto ProyectBackIII"
+  contact:
+    name: "Anais (Siana86)"
+servers:
+  - url: "http://localhost:3000"
+    description: "Servidor local"
+
+paths:
+  /api/users:
+    get:
+      summary: Obtener todos los usuarios
+      tags:
+        - Users
+      responses:
+        "200":
+          description: Lista de usuarios obtenida correctamente
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  payload:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/User'
+
+  /api/users/{uid}:
+    get:
+      summary: Obtener un usuario por ID
+      tags:
+        - Users
+      parameters:
+        - in: path
+          name: uid
+          required: true
+          schema:
+            type: string
+          description: ID del usuario
+      responses:
+        "200":
+          description: Usuario encontrado
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  payload:
+                    $ref: '#/components/schemas/User'
+        "404":
+          description: Usuario no encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+    put:
+      summary: Actualizar usuario por ID
+      tags:
+        - Users
+      parameters:
+        - in: path
+          name: uid
+          required: true
+          schema:
+            type: string
+          description: ID del usuario
+      requestBody:
+        description: Datos a actualizar del usuario
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                first_name:
+                  type: string
+                  example: Ana
+                last_name:
+                  type: string
+                  example: Marcano
+                email:
+                  type: string
+                  example: ana@example.com
+                role:
+                  type: string
+                  example: user
+      responses:
+        "200":
+          description: Usuario actualizado correctamente
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                  message:
+                    type: string
+                    example: User updated
+        "404":
+          description: Usuario no encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+    delete:
+      summary: Eliminar usuario por ID
+      tags:
+        - Users
+      parameters:
+        - in: path
+          name: uid
+          required: true
+          schema:
+            type: string
+          description: ID del usuario
+      responses:
+        "200":
+          description: Usuario eliminado correctamente
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                  message:
+                    type: string
+                    example: User deleted
+
+  /api/mocks/users:
+    get:
+      summary: Generar usuarios mock
+      tags:
+        - Mocks
+      parameters:
+        - in: query
+          name: qty
+          schema:
+            type: integer
+            example: 5
+          description: Cantidad de usuarios a generar
+      responses:
+        "200":
+          description: Usuarios mock generados correctamente
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  payload:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/User'
+
+  /api/mocks/pets:
+    get:
+      summary: Generar mascotas mock
+      tags:
+        - Mocks
+      parameters:
+        - in: query
+          name: qty
+          schema:
+            type: integer
+            example: 5
+          description: Cantidad de mascotas a generar
+      responses:
+        "200":
+          description: Mascotas mock generadas correctamente
+
+  /api/mocks/generateData:
+    post:
+      summary: Generar e insertar datos mock de usuarios y mascotas
+      tags:
+        - Mocks
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                users:
+                  type: integer
+                  example: 3
+                pets:
+                  type: integer
+                  example: 2
+      responses:
+        "200":
+          description: Datos generados e insertados correctamente
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  message:
+                    type: string
+                    example: Datos generados e insertados correctamente
+                  inserted:
+                    type: object
+                    properties:
+                      users:
+                        type: integer
+                        example: 3
+                      pets:
+                        type: integer
+                        example: 2
+
+components:
+  schemas:
+    User:
+      type: object
+      properties:
+        _id:
+          type: string
+          example: 64f9f4f9f4f9f4f9f4f9f4f9
+        first_name:
+          type: string
+          example: Ana
+        last_name:
+          type: string
+          example: Marcano
+        email:
+          type: string
+          example: ana@example.com
+        role:
+          type: string
+          example: user
+    ErrorResponse:
+      type: object
+      properties:
+        status:
+          type: string
+          example: error
+        message:
+          type: string
+          example: User not found
