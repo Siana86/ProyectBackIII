@@ -4,7 +4,7 @@ import connectMongoDB from './config/db.js';
 connectMongoDB(); 
 
 const PORT = process.env.PORT || 8080;
-const server = app.listen(PORT, () => console.log(`🚀 Servidor en http://localhost:${PORT}`));
+const server = app.listen(PORT, () => console.log(`Servidor en http://localhost:${PORT}`));
 
 // Manejo de errores globales
 process.on('unhandledRejection', (reason) => {
