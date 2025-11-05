@@ -61,6 +61,7 @@ yarn install
 yarn add swagger-jsdoc swagger-ui-express yamljs
 yarn dev
 
+---
 
 ## 🐳 Imagen en Docker Hub
 
