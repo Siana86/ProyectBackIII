@@ -33,8 +33,16 @@ git clone https://github.com/Siana86/ProyectBackIII.git
 cd ProyectBackIII
 npm install  
 ```
+### Ejecución del proyecto en modo desarrollo
+```bash
+npm run dev 
+```
+### Ejecución del proyecto modo producción
+```bash
+npm start 
+```
 
-
+---
 ## Documentación de la API
 La documentación de la API está generada con **Swagger (OpenAPI 3.0)**.
 
