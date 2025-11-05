@@ -41,6 +41,23 @@ npm run dev
 ```bash
 npm start 
 ```
+---
+## Pruebas (Testing)
+
+El proyecto incluye **tests funcionales** implementados con **Jest** y **Supertest** para verificar el correcto funcionamiento de los endpoints principales, como el router de adopciones.
+
+Los tests utilizan una base de datos temporal de pruebas, configurada mediante un servidor en memoria (MongoDB Memory Server).
+
+### Dependencias necesarias
+```bash
+npm install --save-dev jest supertest cross-env mongodb-memory-server
+```
+
+### Ejecución de los tests
+```bash
+npm test
+
+```
 
 ---
 ## Documentación de la API
