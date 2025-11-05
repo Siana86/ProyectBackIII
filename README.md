@@ -71,15 +71,15 @@ yarn dev
 La imagen oficial del proyecto está publicada en Docker Hub.  
 Puedes descargarla y ejecutarla directamente con los siguientes comandos:
 
-## Descargar la imagen desde Docker Hub
+**Descargar la imagen desde Docker Hub**
 ```bash
 docker pull anais86/proyectbackiii
-
+```
 ---
-# Ejecutar el contenedor
+**Ejecutar el contenedor**
 ```bash
 docker run -d -p 3000:3000 anais86/proyectbackiii
-
+```
 ---
 Autor: Anais Marcano
 Repositorio: ProyectBackIII
