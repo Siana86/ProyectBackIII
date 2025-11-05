@@ -75,11 +75,11 @@ Puedes descargarla y ejecutarla directamente con los siguientes comandos:
 ```bash
 docker pull anais86/proyectbackiii
 ```
----
+
 **Ejecutar el contenedor**
 ```bash
 docker run -d -p 3000:3000 anais86/proyectbackiii
 ```
 ---
-Autor: Anais Marcano
-Repositorio: ProyectBackIII
+**Autor:** Anais Marcano
+**Repositorio:**  [(ProyectBackIII)](https://github.com/Siana86/ProyectBackIII.git)
